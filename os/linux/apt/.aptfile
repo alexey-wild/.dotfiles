@@ -1,0 +1,12 @@
+software-properties-common
+curl
+wget
+fish
+tmux
+vim
+ack-grep
+xclip
+tree
+openssl
+unzip
+# node # Add repository

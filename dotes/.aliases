@@ -1,0 +1,45 @@
+# IP addresses
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# List all files colorized in long format
+alias l="ls -lF --color"
+
+# List all files colorized in long format, including dot files
+alias la="ls -laF --color"
+
+# List only directories
+alias lsd="ls -lF --color} | grep --color=never '^d'"
+
+# Always use color output for `ls`
+alias ls="command ls --color"
+
+# Always enable colored `grep` output
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+
+# Colored less
+alias less="less -FSinXR"
+
+# Git
+alias ga="git add -p"
+alias gb="git branch -a"
+alias gdc="git di --cached"
+alias gds="git di --staged"
+alias gf="git fetch --prune"
+alias gh="git hist"
+alias gl="git lol"
+alias gm="git merge --no-ff"
+alias gp="git pull --rebase"
+alias gr="git remote -v"
+alias gt="git tag"
+
+# apt-get
+alias apts="apt-cache search"
+alias apti="sudo apt-get install"
+alias aptr="sudo apt-get remove"
+
+# Copy to clipboard
+alias pbcopy="xclip -sel clip"

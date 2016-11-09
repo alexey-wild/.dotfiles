@@ -1,0 +1,57 @@
+[core]
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol,space-before-tab
+	editor = nano
+	excludesfile = ~/.gitignore
+[merge]
+	log = true
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	old = red
+	new = green
+	whitespace = red reverse
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[alias]
+	st = status --short
+	br = branch
+	co = checkout
+	di = diff
+	dc = diff --cached
+	ds = diff --staged
+	ci = commit
+	am = commit --amend
+	amend = commit --amend -C HEAD
+	undo = reset --soft HEAD^
+	cp = cherry-pick
+	lg = log -p
+	rb = rebase
+	lod = log --graph --decorate --format='%h %ad %s' --date=short
+	lod = log --graph --decorate --format='%C(yellow)%h %Cblue%d %Cred%ad %Creset%s' --date=short
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	hist = log --pretty=format:'%C(yellow)%h%C(reset) %ad | %C(75)%s%C(reset) %C(yellow)%d%C(reset) [%an]' --graph --date=short --branches --all
+	standup = !git log --since '1 day ago' --oneline --author `git config --global user.email`
+	# Show files ignored by git:
+	ign = ls-files -o -i --exclude-standard
+	conflicts = !git ls-files --unmerged | cut -f2 | sort -u | xargs grep -El '<<<<<<<|=======|>>>>>>>'
+	cleanup = !git branch --merged | grep -v '^* master$' | grep -v '^  master$' | xargs git branch -d
+	ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
+[diff]
+	noprefix = true
+[help]
+	autocorrect = 1
+[push]
+	default = simple
+[branch]
+	autosetuprebase = always
+[credential]
+	helper = cache --timeout=360000

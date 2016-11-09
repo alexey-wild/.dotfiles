@@ -1,0 +1,46 @@
+# Ignore rules
+
+*~
+*#*
+._*
+\#*
+
+# Compiled source
+
+*.com
+*.class
+*.dll
+*.exe
+*.a
+*.o
+*.so
+*.lo
+*.bak
+*.iml
+*.out
+a.out
+*.pyc
+
+*.tmp
+*.bak
+tmp
+
+# OS generated files
+
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+.Spotlight-V100
+.Trashes
+
+# Project files
+*~
+*.sublime-project
+*.sublime-workspace
+.idea
+.codeintel
+.gradle
+.vscode
+nbproject
